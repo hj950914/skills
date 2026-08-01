@@ -1,6 +1,6 @@
 ---
 name: java-springboot
-description: 在创建、修改、重构、调试或审查 Java 与 Spring Boot 代码时，按仓库现有约定执行开发、质量检查和验证。适用于 REST API、Controller、Service、依赖注入、配置、事务、MyBatis/MyBatis-Plus、Spring Data JPA、Mapper、Repository、DTO、异常、日志、安全、单元测试、集成测试和 Java/Spring Boot 代码审查任务。
+description: 在创建、修改、重构、调试或审查 Java 与 Spring Boot 代码时，按仓库现有约定执行开发、质量检查和验证；当用户明确说出“重新拆分项目结构”时，按约定执行 Maven/Gradle 多模块重新分层。适用于 REST API、Controller、Service、依赖注入、配置、事务、MyBatis/MyBatis-Plus、Spring Data JPA、Mapper、Repository、DTO、异常、日志、安全、单元测试、集成测试和 Java/Spring Boot 代码审查任务。
 ---
 
 # Java 与 Spring Boot 开发规范
@@ -38,7 +38,8 @@ description: 在创建、修改、重构、调试或审查 Java 与 Spring Boot 
 
 ## 实施边界
 
-- 不擅自改变现有模块和包结构，不替换框架，不引入完成任务不需要的依赖。
+- 除非用户明确说出“重新拆分项目结构”，否则不得改变现有模块结构；普通的功能开发、代码重构、移动类、拆包、调整依赖或“拆分模块”都不构成重新分层授权。
+- 用户明确说出“重新拆分项目结构”时，才将模块结构调整视为任务授权范围。若用户没有另行指定目标结构，不再询问或等待确认，直接采用 `app-api/app-biz/app-bootstrap/app-domain/app-infra` 五模块结构，并完整读取架构专题后实施。
 - 只修改完成当前任务所必需的代码，保留用户已有改动，避免顺手整理无关文件。
 - 在实现或修复任务中，直接修复检查发现且属于本次范围的问题，然后重新验证。
 - 在纯审查、解释或诊断任务中，只报告发现和依据；除非用户明确要求，否则不修改代码。
