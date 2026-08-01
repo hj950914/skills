@@ -1,0 +1,4 @@
+interface:
+  display_name: "Java 开发规范"
+  short_description: "按项目约定编写、重构和审查 Java/Spring Boot 代码"
+  default_prompt: "使用 $java-springboot 按当前项目约定实现并验证这项 Java/Spring Boot 代码任务。"
